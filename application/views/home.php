@@ -31,6 +31,7 @@
  ?>
         			<tr>
         				<td><?= $friend['name'] ?></td>
+
         				<td><a href="/users/profile/<?= $friend['id'] ?>">View Profile</a> <a href="/users/delete_friend/<?= $this->session->userdata('user_data')['id'] ?>/<?= $friend['id'] ?>">Remove as Friend</a></td>
         			</tr>
 <?php 
@@ -60,6 +61,7 @@
 				foreach($defri_data as $defriend)
 				{
  ?>
+
         		  <form action="/users/add_friend/<?= $this->session->userdata('user_data')['id'] ?>/<?= $defriend['id'] ?>" method="post">
         			<tr>
         				<td><a href="/users/profile/<?= $defriend['id'] ?>"><?= $defriend['name'] ?></a></td>

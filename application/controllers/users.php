@@ -38,20 +38,21 @@ class Users extends CI_Controller {
 	}
 	public function log_in()
 	{
-			$infos = $this->user->get_email($this->input->post());
 
-			if($infos[0] === TRUE)
-			{
-				$friends = $this->user->get_friends($infos[1]['id']);
-				$defriends = $this->user->get_defriends($infos[1]['id']);
-				$this->session->set_userdata('user_data', $infos[1]);
-				$this->load->view('home', array('fri_data' => $friends, 'defri_data' => $defriends));
-			}
-			else
-			{
-				$this->session->set_flashdata('errors', "email and/or password are/is not valid!");
-				redirect('/');
-			}
+		$infos = $this->user->get_email($this->input->post());
+
+		if($infos[0] === TRUE)
+		{
+			$friends = $this->user->get_friends($infos[1]['id']);
+			$defriends = $this->user->get_defriends($infos[1]['id']);
+			$this->session->set_userdata('user_data', $infos[1]);
+			$this->load->view('home', array('fri_data' => $friends, 'defri_data' => $defriends));
+		}
+		else
+		{
+			$this->session->set_flashdata('errors', "email and/or password are/is not valid!");
+			redirect('/');
+		}
 	}
 	public function add_friend($user_id, $friend_id)
 	{
@@ -67,7 +68,6 @@ class Users extends CI_Controller {
 	}
 	public function home()
 	{
-
 		$id = $this->session->userdata('user_data')['id'];
 		$friends = $this->user->get_friends($id);
 		$defriends = $this->user->get_defriends($id);
@@ -80,6 +80,3 @@ class Users extends CI_Controller {
 		$this->load->view('profile', array('user_data' => $user_data));
 	}
 }
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
