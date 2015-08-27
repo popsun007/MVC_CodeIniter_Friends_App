@@ -1,0 +1,28 @@
+.reg
+{
+	width: 450px;
+	height: 500px;
+	display: inline-block;
+}
+
+.log
+{
+	margin-left: 50px;
+	width: 450px;
+	height: 300px;
+	vertical-align: top;
+	display: inline-block;
+}
+table td
+{
+	padding: 2px 0px;
+}
+/***************Home page*******************/
+.friends
+{
+	width: 400px;
+}
+.unfriends
+{
+	width: 300px;
+}
