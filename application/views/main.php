@@ -3,14 +3,23 @@
     <head>
         <meta charset="utf-8">
         <title>Registration/Login</title>
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
         <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-        <script src="../../assets/bootstrap-datepicker.js"></script>
+        <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="../../assets/css/style.css">
-        <link rel="stylesheet" href="../../assets/less/datepicker.less">
-        <link rel="stylesheet" href="../../assets/css/datepicker.css">
+  <script>
+  $(function() {
+    $( "#datepicker" ).datepicker({
+      showOn: "button",
+      buttonImage: "https://omdeling.info/inc/dhtmlxSuite/imgs/calendar_dis.gif",
+      buttonImageOnly: true,
+      buttonText: "Select date"
+    });
+  });
+  </script>
     </head>
     <body>
         <div class="container">
@@ -41,7 +50,9 @@
 	        			</tr>
 	        			<tr>
 	        				<td>Date of Birth:</td>
-	        				<td><input type="text" class="datepicker" name="dob"></td>
+	        				<td>
+	        					<input type="text" id="datepicker" name="dob"> 
+	        				</td>
 	        			</tr>
 	        			<tr>
 	        				<td colspan="2" style="text-align:right"><input type="submit" value="Register"></td>
